@@ -1,75 +1,178 @@
-# Persona Chat 🎭 — Hitesh & Piyush
+# Persona Chat 🎭
 
-A chat app that answers **in a creator's voice** — same tone, same Hinglish style, same energy.
-You scrape a person's public content (YouTube comments/videos + live streams + sites), bake it
-into a persona, and **OpenAI (gpt-4o-mini)** replies as them. Two personas ship out of the box and you can
-**toggle** between them right in the UI:
+> A chat app that answers **in a creator's voice** — same tone, same Hinglish style, same energy.
+> Two personas ship out of the box (**Hitesh Choudhary** & **Piyush Garg**), and you can toggle
+> between them live in the UI.
 
-| Persona | Voice | Channel / Site |
-|---------|-------|----------------|
+You scrape a person's public content (YouTube comments/videos + live streams + their site), bake it
+into a persona, and **OpenAI `gpt-4o-mini`** replies as them.
+
+**No RAG, no embeddings, no vector DB.** The whole approach is:
+
+```
+good scrape  →  static persona context  →  OpenAI does the voice
+```
+
+| Persona | Voice | Sources |
+|---------|-------|---------|
 | ☕ **Hitesh Choudhary** — *Chai aur Code* | warm Hinglish, "Haanji", chai energy | [@chaiaurcode](https://youtube.com/@chaiaurcode) · hiteshchoudhary.com · chaicode.com |
 | 👨‍💻 **Piyush Garg** | English-leaning Hinglish, practical, full-stack & GenAI | [@piyushgargdev](https://youtube.com/@piyushgargdev) · piyushgarg.dev |
 
-**LLM:** OpenAI **`gpt-4o-mini`** via the official `openai` SDK (cheap + fast).
-**No RAG, no embeddings, no vector DB.** Just: scrape → static persona context → OpenAI.
+---
+
+## Table of Contents
+
+1. [Features](#features)
+2. [How It Works](#how-it-works)
+3. [Project Structure](#project-structure)
+4. [Prerequisites](#prerequisites)
+5. [Setup](#setup)
+6. [Configuration](#configuration)
+7. [Running Locally](#running-locally)
+8. [Enriching a Persona (Scraping Pipeline)](#enriching-a-persona-scraping-pipeline)
+9. [Adding a New Persona](#adding-a-new-persona)
+10. [Deploying to Vercel](#deploying-to-vercel)
+11. [How the Persona System Prompt Is Built](#how-the-persona-system-prompt-is-built)
+12. [Cost & Tokens](#cost--tokens)
+13. [Notes & Caveats](#notes--caveats)
+
+---
+
+## Features
+
+- **Two personas out of the box**, switchable via a toggle in the header.
+- **Per-persona chat history** — switching back and forth never loses a conversation.
+- **Streaming replies** — tokens appear as they're generated, both locally and in production.
+- **Real photos** as persona avatars (with emoji fallback).
+- **Grounded voice** — replies are shaped by scraped comment replies, live-stream tone, and topics.
+- **Registry-driven** — add a persona in one file and the scrapers, server, and UI pick it up.
+- **One codebase, two runtimes** — the same logic runs as a local Express server and as Vercel
+  serverless functions.
+- **MOCK mode** — the UI works with a canned reply even before you add an API key.
+
+---
+
+## How It Works
+
+The app is a four-stage pipeline. Stages 1–2 run **once on your machine** (to prepare persona data);
+stages 3–4 run **every time someone chats**.
 
 ```
-STEP 1 — SCRAPE            scraper/youtube.js   (videos, comments + owner replies)
-   (per persona)           scraper/website.js   (their sites)
-                                 |  -> data/<persona>/raw/*.json
-                           scraper/live-tone.js (1 live stream -> distilled tone)
-                                 |  -> data/<persona>/live-style.md   (grounding file 1 of 3)
+STEP 1 — SCRAPE            scraper/youtube.js    videos, comments + owner replies
+   (per persona)           scraper/website.js    their site(s)
+                                 └─▶ data/<persona>/raw/*.json
+                           scraper/live-tone.js  1 live stream → distilled tone
+                                 └─▶ data/<persona>/live-style.md
+
 STEP 2 — BUILD PERSONA     process/build-persona.js   (reads raw/*.json)
-                                 |  -> data/<persona>/examples.json   (grounding file 2 of 3 — real reply pairs)
-                                 |  -> data/<persona>/knowledge.md    (grounding file 3 of 3 — what they teach)
-STEP 3 — CHAT SERVER       server/index.js   (Express + OpenAI, streamed; one prompt per persona)
-                                 |  system prompt = persona.js (seed voice)
-                                 |                  + knowledge.md + live-style.md + examples.json
-STEP 4 — FRONTEND          web/  (React + Vite chat UI, with a persona toggle)
+                                 ├─▶ data/<persona>/examples.json   real reply pairs (few-shot)
+                                 └─▶ data/<persona>/knowledge.md    what they teach
 
-Grounding files that get generated: live-style.md (STEP 1), examples.json + knowledge.md (STEP 2).
-data/<persona>/persona.js is the hand-written seed voice — an INPUT you tune, not generated.
+STEP 3 — CHAT BACKEND      lib/handlers.js       assembles system prompt + streams OpenAI
+                           server/index.js (local)  ·  api/*.js (Vercel)
+
+STEP 4 — FRONTEND          web/                  React + Vite chat UI, persona toggle
 ```
 
-Everything is wired through one registry — **`data/personas.js`**. Add a persona there and the
-scrapers, build step, server, and UI all pick it up automatically.
+Everything is wired through **one registry — [`data/personas.js`](data/personas.js)**. It lists each
+persona's name, emoji, avatar, greeting, YouTube handle, live-stream video, and website. Add a persona
+there and the scrapers, build step, backend, and UI all pick it up automatically.
 
-The "intelligence" is: **good scrape → good persona context → OpenAI does the voice.**
-`data/<persona>/persona.js` (their tone/rules) is the single biggest lever — tune it freely.
+**The single biggest lever on quality is [`data/<persona>/persona.js`](data/hitesh/persona.js)** — the
+hand-written "seed voice" (tone + rules). Tune it freely.
+
+---
+
+## Project Structure
+
+```
+data/
+  personas.js              # registry: all personas + their config (the wiring hub)
+  <persona>/
+    persona.js             # seed voice + rules  (hand-written — the system-prompt base)
+    knowledge.md           # what they teach     (generated by build:persona)
+    examples.json          # real reply pairs    (generated by build:persona)
+    live-style.md          # distilled live-stream tone  (generated by scrape:live)
+    raw/*.json             # raw scraped data    (gitignored; dev-only)
+
+lib/
+  prompts.js               # builds one system prompt per persona (shared)
+  handlers.js              # /chat /personas /health logic (shared: local + serverless)
+
+scraper/
+  youtube.js               # YouTube Data API v3 scraper       (persona-aware)
+  website.js               # cheerio site scraper              (persona-aware)
+  live-tone.js             # live transcript → distilled tone  (persona-aware)
+
+process/
+  build-persona.js         # raw/*.json → examples.json + knowledge.md
+
+server/
+  index.js                 # LOCAL dev: thin Express wrapper around lib/handlers.js
+
+api/                       # PRODUCTION: Vercel serverless functions (re-export lib/handlers.js)
+  chat.js                  #   POST /chat   (streams)
+  personas.js              #   GET  /personas
+  health.js                #   GET  /health
+
+web/
+  src/App.jsx              # React chat UI (toggle, per-persona history, streaming)
+  public/avatars/*         # persona photos (served statically at /avatars/<file>)
+  public/favicon.svg       # browser-tab icon
+
+vercel.json                # Vercel build config + rewrites + bundles data/** into functions
+```
+
+> **One logic, two runtimes:** both `server/index.js` (local) and `api/*.js` (Vercel) delegate to the
+> same [`lib/handlers.js`](lib/handlers.js) and [`lib/prompts.js`](lib/prompts.js) — so replies are
+> identical in development and production.
+
+---
+
+## Prerequisites
+
+- **Node.js 18+** (20.19+ / 22.12+ recommended for the Vite frontend).
+- An **OpenAI API key** — [platform.openai.com/api-keys](https://platform.openai.com/api-keys) (paid; `gpt-4o-mini` is very cheap).
+- *(Optional, only for scraping)* a **YouTube Data API v3 key** — [Google Cloud Console](https://console.cloud.google.com/).
 
 ---
 
 ## Setup
 
 ```bash
-# 1. install backend deps
+# 1. install backend dependencies
 npm install
 
-# 2. install frontend deps
+# 2. install frontend dependencies
 npm run web:install
 
-# 3. add your keys
+# 3. create your env file
 cp .env.example .env
-#    then edit .env — see "Keys" below
+#    then edit .env  (see Configuration below)
 ```
-
-### Keys
-
-| Key | Needed for | Get it |
-|-----|-----------|--------|
-| `OPENAI_API_KEY` | real chat replies + live-tone distill | https://platform.openai.com/api-keys  (paid) |
-| `YOUTUBE_API_KEY`   | scraping YT comments/videos | https://console.cloud.google.com/ (enable *YouTube Data API v3*) |
-
-> Model defaults to `gpt-4o-mini` (cheap + fast). Override with `OPENAI_MODEL` in `.env`.
-
-**No OpenAI key yet?** No problem — the server runs in **MOCK mode** and the UI works with a
-canned reply, so you can build the frontend first. Add the key later to go live.
 
 ---
 
-## Run
+## Configuration
 
-Two terminals:
+All configuration lives in `.env` (copied from `.env.example`).
+
+| Variable | Required? | Default | Purpose |
+|----------|-----------|---------|---------|
+| `OPENAI_API_KEY` | **Yes** (for real replies) | — | Auth for OpenAI chat completions |
+| `OPENAI_MODEL` | No | `gpt-4o-mini` | Override the chat model (e.g. `gpt-4o`) |
+| `YOUTUBE_API_KEY` | Only for scraping | — | YouTube Data API v3 (comments/videos) |
+| `MOCK` | No | `0` | Set `1` to force a canned reply (no LLM call) |
+| `PORT` | No | `8787` | Local backend port |
+
+> **No OpenAI key yet?** The server automatically runs in **MOCK mode** — the UI works with a canned
+> reply, so you can build/test the frontend first, then add the key to go live.
+
+---
+
+## Running Locally
+
+Run the backend and frontend in two terminals:
 
 ```bash
 # terminal 1 — backend  (http://localhost:8787)
@@ -79,111 +182,136 @@ npm run dev
 npm run web
 ```
 
-Open **http://localhost:5173**, use the **toggle in the top-right** to pick a persona, and chat.
-Each persona keeps its **own** conversation, so switching back and forth never loses history.
-The Vite dev server proxies `/chat`, `/health`, and `/personas` to the backend; avatars are static
-files in `web/public/avatars/`.
+Open **http://localhost:5173**, pick a persona with the **toggle in the top-right**, and chat.
+
+- Each persona keeps its **own** conversation — switching never loses history.
+- The Vite dev server proxies `/chat`, `/health`, and `/personas` to the backend.
+- Avatars are static files in `web/public/avatars/` (served directly, no backend needed).
+
+**Endpoints**
+
+| Method | Path | Body / Result |
+|--------|------|---------------|
+| `POST` | `/chat` | `{ persona, messages }` → streamed plain-text reply |
+| `GET` | `/personas` | `{ personas: [...], default }` — metadata for the toggle |
+| `GET` | `/health` | `{ ok, mock, provider, model, hasKey }` |
 
 ---
 
-## Deploy to Vercel
+## Enriching a Persona (Scraping Pipeline)
 
-The app ships ready for Vercel — the frontend is static and the backend runs as **serverless
-functions** in `api/` (which stream OpenAI's reply, same as local). `vercel.json` wires it all up.
+Out of the box each persona uses **seed** examples/knowledge. To ground it in the person's *actual*
+replies and live-stream tone, run the pipeline for a persona (pass the id after `--`):
 
 ```bash
-# 1. push to GitHub  (already a git repo — add a remote, commit, push)
+# --- Piyush (omit the id to default to "hitesh") ---
+npm run scrape:yt     -- piyush   # needs YOUTUBE_API_KEY — videos + owner comment replies
+npm run scrape:web    -- piyush   # text from their site(s)
+npm run scrape:live   -- piyush   # 1 live stream → distilled "live tone" note (needs OPENAI_API_KEY)
+npm run build:persona -- piyush   # raw/*.json → examples.json + knowledge.md
+npm run dev                       # restart to load the new persona context
+```
+
+What each step contributes:
+
+- **`scrape:yt`** — the person's **own replies to comments**, i.e. exactly *how they answer*. This is
+  the highest-signal data for voice.
+- **`scrape:live`** — distills one live stream into a compact tone note (openings, signature phrases,
+  how they treat the audience). We *distill* rather than dump the raw transcript so it stays cheap on
+  every message (~500 tokens vs ~6k+).
+- **`scrape:web`** — grounding text about what they teach.
+- **`build:persona`** — assembles the scraped data into `examples.json` + `knowledge.md`.
+
+> **Override the live-stream video:** `LIVE_VIDEO_ID=<id> npm run scrape:live -- piyush`
+> (the default per persona is set in `data/personas.js`).
+
+---
+
+## Adding a New Persona
+
+1. Create `data/<id>/persona.js` exporting a `PERSONA` string (their voice — copy an existing one as a template).
+2. *(Optional)* drop a photo in `web/public/avatars/` and note its filename.
+3. Add an entry to **[`data/personas.js`](data/personas.js)**: `name`, `emoji`, `avatar`, `greeting`,
+   `youtube.handle`, `youtube.liveVideoId`, `website`.
+4. Run the scrape + build steps for that id (see above).
+5. Restart the server — the toggle shows the new persona automatically.
+
+---
+
+## Deploying to Vercel
+
+The app ships ready for Vercel: the frontend is static and the backend runs as **serverless functions**
+in `api/` (which stream OpenAI's reply, same as local). [`vercel.json`](vercel.json) wires it all up.
+
+```bash
+# 1. push to GitHub (already a git repo — add a remote, commit, push)
 git add -A && git commit -m "persona chat" && git push
-
-# 2. on vercel.com -> New Project -> import this repo.
-#    Vercel reads vercel.json automatically — no build settings to change.
-
-# 3. Project -> Settings -> Environment Variables:
-#       OPENAI_API_KEY = <your key>          (required)
-#       OPENAI_MODEL   = gpt-4o-mini         (optional; this is the default)
-
-# 4. Deploy. Done — one URL serves the UI + /chat + /personas.
 ```
 
-> Prefer the CLI? `npm i -g vercel` then `vercel` (preview) / `vercel --prod`.
-> `YOUTUBE_API_KEY` is **not** needed on Vercel — it's only for scraping locally.
-> The scrape/build steps run on your machine; commit the generated `data/<persona>/` files so
-> they ship with the deploy (`data/raw/` is gitignored and not needed at runtime).
+2. On [vercel.com](https://vercel.com) → **New Project** → import the repo.
+   Vercel reads `vercel.json` automatically — no build settings to change.
 
-**How it maps:** `web/dist` → static site · `/chat`,`/personas`,`/health` → `api/*` functions
-(via `rewrites`) · `data/**` is bundled into the functions (`includeFiles`) so prompts load at runtime.
+3. **Settings → Environment Variables:**
+
+   | Variable | Value |
+   |----------|-------|
+   | `OPENAI_API_KEY` | your key *(required)* |
+   | `OPENAI_MODEL` | `gpt-4o-mini` *(optional; this is the default)* |
+
+4. **Deploy.** One URL serves the UI + `/chat` + `/personas`.
+
+> **CLI alternative:** `npm i -g vercel`, then `vercel` (preview) / `vercel --prod`.
+
+**How the deploy maps**
+
+| Part | Handled by |
+|------|-----------|
+| `web/dist` | served as the static site (root) |
+| `/chat`, `/personas`, `/health` | `api/*` serverless functions (via `rewrites`) |
+| `data/**` | bundled into the functions (`includeFiles`) so prompts load at runtime |
+| `/avatars/*` | static files from `web/public/avatars/` |
+
+> `YOUTUBE_API_KEY` is **not** needed on Vercel — it's only for scraping locally. The scrape/build
+> steps run on your machine; commit the generated `data/<persona>/` files so they ship with the deploy
+> (`data/raw/` is gitignored and not needed at runtime).
 
 ---
 
-## Make it sound like the *real* person (enrich a persona)
+## How the Persona System Prompt Is Built
 
-Out of the box each persona uses **seed** examples/knowledge. To ground it in their actual replies
-and live-stream tone, run the pipeline **for a persona** (pass the id after `--`):
+On startup (and on each serverless cold start), [`lib/prompts.js`](lib/prompts.js) builds **one system
+prompt per persona** by concatenating four pieces:
 
-```bash
-# --- Piyush (default id if omitted is "hitesh") ---
-npm run scrape:yt   -- piyush   # needs YOUTUBE_API_KEY — videos + owner comment replies
-npm run scrape:web  -- piyush   # text from their site(s)
-npm run scrape:live -- piyush   # 1 live stream -> distilled "live tone" note (needs OPENAI_API_KEY)
-npm run build:persona -- piyush # raw/* -> examples.json + knowledge.md
-npm run dev                     # restart to load the new persona context
-
-# --- Hitesh (same, with "hitesh" or no arg) ---
-npm run scrape:yt   -- hitesh
+```
+system prompt  =  persona.js        (seed voice + hard rules)
+               +  knowledge.md      (what they teach)
+               +  live-style.md     (distilled live-stream tone)
+               +  examples.json     (up to 20 real comment→reply pairs, few-shot)
 ```
 
-`scrape:yt` gets their **own replies to comments** ("how they answer"); `scrape:live` distills a
-live stream into a compact tone note (openings, signature phrases, how they treat the audience) —
-we distill instead of dumping the raw transcript so it stays cheap per message.
-
-> Override the live-stream video: `LIVE_VIDEO_ID=<id> npm run scrape:live -- piyush`
-> (default is set per persona in `data/personas.js`).
+Every chat request sends this system prompt plus the **last 10 turns** of conversation history to
+OpenAI, then streams the reply back token-by-token. Because the LLM is stateless, the full persona
+context goes with *every* message.
 
 ---
 
-## Add a new persona
+## Cost & Tokens
 
-1. Create `data/<id>/persona.js` exporting `PERSONA` (their voice — copy an existing one as a template).
-2. Add an entry to **`data/personas.js`** (name, emoji, greeting, `youtube.handle`, `youtube.liveVideoId`, `website`).
-3. Scrape + build for that id (the four commands above).
-4. Restart the server. The toggle shows the new persona automatically.
+- The system prompt is ~1,900–2,200 tokens, so a typical request is **~2,300 input tokens** + a short
+  output. On `gpt-4o-mini` that's roughly **$0.0004 per message** (~2,500 messages per $1).
+- To trim cost: reduce the few-shot count in `lib/prompts.js` (`.slice(0, 20)` → `.slice(0, 8)`), or
+  shorten `knowledge.md`. Usually unnecessary given how cheap `gpt-4o-mini` is.
+- Only the **last 10 turns** of history are sent, so long conversations stay affordable.
 
 ---
 
-## Files
+## Notes & Caveats
 
-```
-data/personas.js          # registry: all personas + their config (the wiring hub)
-data/<persona>/persona.js # their voice + rules  (seed system prompt — edit to tune tone)
-data/<persona>/knowledge.md   # what they teach  (regenerated by build:persona)
-data/<persona>/examples.json  # real reply pairs (regenerated by build:persona)
-data/<persona>/live-style.md  # distilled live-stream tone (from scrape:live)
-data/<persona>/raw/*.json     # raw scraped data (gitignored; dev-only)
-lib/prompts.js            # builds one system prompt per persona (shared: local server + serverless)
-scraper/youtube.js        # YouTube Data API v3 scraper (persona-aware)
-scraper/website.js        # cheerio site scraper (persona-aware)
-scraper/live-tone.js      # live-stream transcript -> distilled tone (persona-aware)
-process/build-persona.js  # raw/* -> examples.json + knowledge.md
-server/index.js           # LOCAL dev: Express + OpenAI streaming (uses lib/prompts.js)
-api/chat.js               # PROD: Vercel serverless /chat (streams; uses lib/prompts.js)
-api/personas.js           # PROD: Vercel serverless /personas   ·   api/health.js -> /health
-vercel.json               # Vercel build + rewrites (/chat->/api/chat) + bundles data/**
-web/                      # React + Vite chat UI with persona toggle
-web/public/avatars/*      # persona photos (served statically at /avatars/<file>)
-```
-
-Both `server/index.js` (local) and `api/*.js` (Vercel) share the same persona logic via
-`lib/prompts.js` + `data/personas.js` — so replies are identical in dev and production.
-
-## Notes / tweaks
-
-- **Model:** defaults to `gpt-4o-mini` (cheap + fast). Set `OPENAI_MODEL` in `.env` to any other
-  OpenAI chat model (e.g. `gpt-4o`) for higher fidelity. All LLM logic lives in `lib/handlers.js`.
-- **Cost:** the whole system prompt (persona + knowledge + live-style + examples) is sent on every
-  message. The server only sends the **last 10 turns** of history to keep long chats cheap
-  (`lib/handlers.js`). Live-stream tone is *distilled* (~500 tokens) rather than raw (~6k+).
+- **Model:** defaults to `gpt-4o-mini`. Set `OPENAI_MODEL` to any other OpenAI chat model (e.g.
+  `gpt-4o`) for higher fidelity. All LLM logic lives in [`lib/handlers.js`](lib/handlers.js).
 - **JS-heavy sites:** if `scrape:web` returns little text, the site is a JavaScript SPA — swap
-  `scraper/website.js` to Puppeteer (render, then read). (piyushgarg.dev is an SPA, so its scrape is thin.)
-- **Ethics/ToS:** scraping uses the official YouTube API; keep this for personal/educational use.
-  This mimics real people's public style — keep it respectful and for learning.
-```
+  `scraper/website.js` to Puppeteer (render, then read). *(piyushgarg.dev is an SPA, so its scrape is thin.)*
+- **Thin example sets:** some creators reply to few comments, so `examples.json` may be small — the
+  seed `persona.js` and `live-style.md` carry most of the voice in that case.
+- **Ethics / ToS:** scraping uses the official YouTube API; keep this for personal/educational use.
+  This mimics a real person's *public* style — keep it respectful and for learning.
