@@ -2,7 +2,7 @@
 
 A chat app that answers **in a creator's voice** — same tone, same Hinglish style, same energy.
 You scrape a person's public content (YouTube comments/videos + live streams + sites), bake it
-into a persona, and **Gemini** replies as them. Two personas ship out of the box and you can
+into a persona, and **OpenAI (gpt-4o-mini)** replies as them. Two personas ship out of the box and you can
 **toggle** between them right in the UI:
 
 | Persona | Voice | Channel / Site |
@@ -10,8 +10,8 @@ into a persona, and **Gemini** replies as them. Two personas ship out of the box
 | ☕ **Hitesh Choudhary** — *Chai aur Code* | warm Hinglish, "Haanji", chai energy | [@chaiaurcode](https://youtube.com/@chaiaurcode) · hiteshchoudhary.com · chaicode.com |
 | 👨‍💻 **Piyush Garg** | English-leaning Hinglish, practical, full-stack & GenAI | [@piyushgargdev](https://youtube.com/@piyushgargdev) · piyushgarg.dev |
 
-**LLM:** Gemini via its **OpenAI-compatible API** (the `openai` SDK pointed at Google's endpoint).
-**No RAG, no embeddings, no vector DB.** Just: scrape → static persona context → Gemini.
+**LLM:** OpenAI **`gpt-4o-mini`** via the official `openai` SDK (cheap + fast).
+**No RAG, no embeddings, no vector DB.** Just: scrape → static persona context → OpenAI.
 
 ```
 STEP 1 — SCRAPE            scraper/youtube.js   (videos, comments + owner replies)
@@ -22,7 +22,7 @@ STEP 1 — SCRAPE            scraper/youtube.js   (videos, comments + owner repl
 STEP 2 — BUILD PERSONA     process/build-persona.js   (reads raw/*.json)
                                  |  -> data/<persona>/examples.json   (grounding file 2 of 3 — real reply pairs)
                                  |  -> data/<persona>/knowledge.md    (grounding file 3 of 3 — what they teach)
-STEP 3 — CHAT SERVER       server/index.js   (Express + Gemini, streamed; one prompt per persona)
+STEP 3 — CHAT SERVER       server/index.js   (Express + OpenAI, streamed; one prompt per persona)
                                  |  system prompt = persona.js (seed voice)
                                  |                  + knowledge.md + live-style.md + examples.json
 STEP 4 — FRONTEND          web/  (React + Vite chat UI, with a persona toggle)
@@ -34,7 +34,7 @@ data/<persona>/persona.js is the hand-written seed voice — an INPUT you tune, 
 Everything is wired through one registry — **`data/personas.js`**. Add a persona there and the
 scrapers, build step, server, and UI all pick it up automatically.
 
-The "intelligence" is: **good scrape → good persona context → Gemini does the voice.**
+The "intelligence" is: **good scrape → good persona context → OpenAI does the voice.**
 `data/<persona>/persona.js` (their tone/rules) is the single biggest lever — tune it freely.
 
 ---
@@ -57,13 +57,12 @@ cp .env.example .env
 
 | Key | Needed for | Get it |
 |-----|-----------|--------|
-| `GEMINI_API_KEY` | real chat replies + live-tone distill | https://aistudio.google.com/apikey  (free) |
+| `OPENAI_API_KEY` | real chat replies + live-tone distill | https://platform.openai.com/api-keys  (paid) |
 | `YOUTUBE_API_KEY`   | scraping YT comments/videos | https://console.cloud.google.com/ (enable *YouTube Data API v3*) |
 
-> `GEMINI_API_KEY` is used through the **OpenAI-compatible** endpoint, so the `openai` SDK
-> just works with it. (You can also name it `OPENAI_API_KEY` — the server accepts either.)
+> Model defaults to `gpt-4o-mini` (cheap + fast). Override with `OPENAI_MODEL` in `.env`.
 
-**No Gemini key yet?** No problem — the server runs in **MOCK mode** and the UI works with a
+**No OpenAI key yet?** No problem — the server runs in **MOCK mode** and the UI works with a
 canned reply, so you can build the frontend first. Add the key later to go live.
 
 ---
@@ -90,7 +89,7 @@ files in `web/public/avatars/`.
 ## Deploy to Vercel
 
 The app ships ready for Vercel — the frontend is static and the backend runs as **serverless
-functions** in `api/` (which stream Gemini's reply, same as local). `vercel.json` wires it all up.
+functions** in `api/` (which stream OpenAI's reply, same as local). `vercel.json` wires it all up.
 
 ```bash
 # 1. push to GitHub  (already a git repo — add a remote, commit, push)
@@ -100,8 +99,8 @@ git add -A && git commit -m "persona chat" && git push
 #    Vercel reads vercel.json automatically — no build settings to change.
 
 # 3. Project -> Settings -> Environment Variables:
-#       GEMINI_API_KEY = <your key>          (required)
-#       GEMINI_MODEL   = gemini-2.5-pro      (optional; defaults to gemini-2.5-flash)
+#       OPENAI_API_KEY = <your key>          (required)
+#       OPENAI_MODEL   = gpt-4o-mini         (optional; this is the default)
 
 # 4. Deploy. Done — one URL serves the UI + /chat + /personas.
 ```
@@ -125,7 +124,7 @@ and live-stream tone, run the pipeline **for a persona** (pass the id after `--`
 # --- Piyush (default id if omitted is "hitesh") ---
 npm run scrape:yt   -- piyush   # needs YOUTUBE_API_KEY — videos + owner comment replies
 npm run scrape:web  -- piyush   # text from their site(s)
-npm run scrape:live -- piyush   # 1 live stream -> distilled "live tone" note (needs GEMINI_API_KEY)
+npm run scrape:live -- piyush   # 1 live stream -> distilled "live tone" note (needs OPENAI_API_KEY)
 npm run build:persona -- piyush # raw/* -> examples.json + knowledge.md
 npm run dev                     # restart to load the new persona context
 
@@ -165,7 +164,7 @@ scraper/youtube.js        # YouTube Data API v3 scraper (persona-aware)
 scraper/website.js        # cheerio site scraper (persona-aware)
 scraper/live-tone.js      # live-stream transcript -> distilled tone (persona-aware)
 process/build-persona.js  # raw/* -> examples.json + knowledge.md
-server/index.js           # LOCAL dev: Express + Gemini streaming (uses lib/prompts.js)
+server/index.js           # LOCAL dev: Express + OpenAI streaming (uses lib/prompts.js)
 api/chat.js               # PROD: Vercel serverless /chat (streams; uses lib/prompts.js)
 api/personas.js           # PROD: Vercel serverless /personas   ·   api/health.js -> /health
 vercel.json               # Vercel build + rewrites (/chat->/api/chat) + bundles data/**
@@ -178,14 +177,11 @@ Both `server/index.js` (local) and `api/*.js` (Vercel) share the same persona lo
 
 ## Notes / tweaks
 
-- **Model:** `server/index.js` defaults to `gemini-2.5-flash` (fast + cheap). Set `GEMINI_MODEL`
-  in `.env` to `gemini-2.5-pro` for the best persona fidelity, or any other Gemini model.
+- **Model:** defaults to `gpt-4o-mini` (cheap + fast). Set `OPENAI_MODEL` in `.env` to any other
+  OpenAI chat model (e.g. `gpt-4o`) for higher fidelity. All LLM logic lives in `lib/handlers.js`.
 - **Cost:** the whole system prompt (persona + knowledge + live-style + examples) is sent on every
   message. The server only sends the **last 10 turns** of history to keep long chats cheap
-  (`server/index.js`). Live-stream tone is *distilled* (~500 tokens) rather than raw (~6k+).
-- **Why OpenAI-compatible?** Google exposes Gemini at an OpenAI-shaped endpoint
-  (`https://generativelanguage.googleapis.com/v1beta/openai/`), so the standard `openai` SDK
-  works unchanged — only the `baseURL` + key differ. Easy to swap providers later.
+  (`lib/handlers.js`). Live-stream tone is *distilled* (~500 tokens) rather than raw (~6k+).
 - **JS-heavy sites:** if `scrape:web` returns little text, the site is a JavaScript SPA — swap
   `scraper/website.js` to Puppeteer (render, then read). (piyushgarg.dev is an SPA, so its scrape is thin.)
 - **Ethics/ToS:** scraping uses the official YouTube API; keep this for personal/educational use.

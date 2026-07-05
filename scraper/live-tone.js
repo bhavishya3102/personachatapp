@@ -27,12 +27,11 @@ const RAW_DIR = path.join(DATA_DIR, "raw");
 
 // Default = the persona's configured (shortish) live stream. Override via env.
 const VIDEO_ID = process.env.LIVE_VIDEO_ID || cfg.youtube.liveVideoId;
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
-const API_KEY = process.env.GEMINI_API_KEY || process.env.OPENAI_API_KEY;
-const BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/";
+const MODEL = process.env.OPENAI_MODEL || "gpt-4o-mini";
+const API_KEY = process.env.OPENAI_API_KEY;
 
 if (!API_KEY) {
-  console.error("Missing GEMINI_API_KEY in .env — needed to distill the transcript.");
+  console.error("Missing OPENAI_API_KEY in .env — needed to distill the transcript.");
   process.exit(1);
 }
 
@@ -48,11 +47,11 @@ async function main() {
     JSON.stringify({ videoId: VIDEO_ID, scrapedAt: new Date().toISOString(), transcript }, null, 2)
   );
 
-  console.log("Distilling live tone & behaviour with Gemini …");
-  const client = new OpenAI({ apiKey: API_KEY, baseURL: BASE_URL });
+  console.log("Distilling live tone & behaviour with OpenAI …");
+  const client = new OpenAI({ apiKey: API_KEY }); // default baseURL = https://api.openai.com/v1
   const res = await client.chat.completions.create({
     model: MODEL,
-    max_tokens: 4000, // headroom: 2.5-flash "thinking" tokens count against this, so keep it generous
+    max_tokens: 1500,
     messages: [
       {
         role: "system",

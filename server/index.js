@@ -4,7 +4,7 @@
 // identically in dev and prod, with the logic written exactly once.
 //
 // Uses the official `openai` SDK pointed at Google's OpenAI-compatible endpoint
-// (see lib/handlers.js). Streams Gemini's reply token-by-token to the browser.
+// (see lib/handlers.js). Streams OpenAI's reply token-by-token to the browser.
 // Avatars are static files in web/public/avatars — served by Vite/Vercel, not here.
 
 import express from "express";
@@ -25,7 +25,7 @@ app.post("/chat", handleChat);
 
 app.listen(PORT, () => {
   console.log(`\n🎭 Persona chat server -> http://localhost:${PORT}`);
-  console.log(`   mode: ${MOCK ? "MOCK (set GEMINI_API_KEY to go live)" : "LIVE — gemini via openai-compatible (" + MODEL + ")"}`);
+  console.log(`   mode: ${MOCK ? "MOCK (set OPENAI_API_KEY to go live)" : `LIVE — openai (${MODEL})`}`);
   for (const cfg of Object.values(PERSONAS)) {
     console.log(`   persona ${cfg.id.padEnd(7)} ${cfg.emoji}  system prompt: ${SYSTEM_PROMPTS[cfg.id].length} chars`);
   }

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Chat app that replies in Hitesh Choudhary's persona (tone + style), grounded in scraped YouTube/website data. No RAG, no embeddings — simple scraping + static persona context + Gemini (OpenAI-compatible API).",
+  "description": "Multi-persona chat app (Hitesh & Piyush) that replies in a creator's voice, grounded in scraped YouTube/website data. No RAG, no embeddings — simple scraping + static persona context + OpenAI (gpt-4o-mini).",
   "engines": {
     "node": ">=18"
   },
