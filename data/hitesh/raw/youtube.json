@@ -1,0 +1,429 @@
+{
+  "scrapedAt": "2026-07-03T16:35:00.279Z",
+  "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+  "channelTitle": "Chai aur Code",
+  "videos": [
+    {
+      "videoId": "t9PyQBDZSyw",
+      "title": "My AI Agents on Hostinger VPS to give me AI updates",
+      "description": "Get your machine here\nhttps://www.hostg.xyz/SHJYZ\n\nand coupon codes are\nCHAIAURCODE - 10% off on 12 month plans\nCHAIAURCODE15 - 15% off on 24 months and above plans",
+      "transcript": ""
+    },
+    {
+      "videoId": "FZjJVuHWOIw",
+      "title": "Springboot in Production with Redis, Microservices and Kafka | Chai aur Springboot",
+      "description": "visit https://chaicode.com \nin Paid Collab with  @TechByAniOfficial   \n\n0:00 Chai and Spring Boot series overview\n2:41 Introduction to Redis and Spring Boot\n6:21 Redis architecture and data types\n18:48 Implementing Redis in Spring Boot\n28:52 Cache eviction and update strategies\n47:56 Integration testing with Jacoco\n1:09:19 Writing integration tests for services\n1:36:35 Dockerizing the Spring Boot application\n1:46:57 Monolithic vs Microservices architecture\n1:55:35 Introduction to microservices\n2:02:01 Event-driven architecture basics\n2:13:33 Implementing Kafka with Spring Boot\n2:27:32 Running microservices with Docker Compose\n2:39:42 Testing microservices with Postman\n2:47:29 Container orchestration and deployment\n\nWelcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "mSeGdryJdcc",
+      "title": "Chai aur Book Reading",
+      "description": "https://chaicode.com",
+      "transcript": ""
+    },
+    {
+      "videoId": "oXVNXFQDDIM",
+      "title": "Security in Springboot | Chai aur Springboot",
+      "description": "Visit https://chaicode.com\nin Paid Collab with  @TechByAniOfficial \n\n0:00 Spring Boot Security Overview\n2:59 Handling Exceptions in Spring Boot\n7:38 Centralized Exception Handling\n21:59 Validation in Spring Boot\n41:21 Introduction to Spring Security\n46:32 Security Filter Chain Explained\n52:40 Implementing Spring Security\n58:49 Configuring Security in Spring Boot\n1:15:38 JWT vs Session Authentication\n1:36:01 Dependencies for JWT Implementation\n1:39:23 Creating Auth Controller\n1:53:25 Public Auth Requests Configuration\n2:32:41 Verifying JWT Tokens\n2:45:53 Role-Based Access Control\n2:59:01 Summary and Learnings\n\nDive into the intricate world of Spring Boot security and exception handling with this comprehensive guide. Designed for those who have ventured into the third installment of the 'Tea and Spring Boot' series, this video takes you through the essential security measures needed in today's AI-driven world. As security becomes paramount, understanding the foundational elements like exception handling is crucial for safeguarding applications.\n\nThe session begins by delving into the basics of exception handling in Spring Boot. You'll explore how unexpected events, such as a missing user in the database, can disrupt the program flow and learn to manage these exceptions effectively. The video illustrates the creation of a custom exception, demonstrating how to provide meaningful error responses using DTOs and centralized exception handlers. This approach ensures a clean, standardized, and user-friendly error management process.\n\nMoving forward, the focus shifts to Spring Security. You’ll gain insights into how Spring Security addresses the challenges of traditional security methods by introducing a centralized, filter-based framework. The video explains the role of the security filter chain, detailing how various filters like CSRF, JWT token, and authentication filters work together to protect your application from unauthorized access. Additionally, the session covers the implementation of JWT for stateless session management, highlighting the advantages of using tokens over maintaining server-side sessions.\n\nBy the end of this tutorial, you'll be equipped with the knowledge to implement robust security measures in your Spring Boot applications, ensuring they are well-protected against potential threats. Whether it's handling exceptions gracefully or securing APIs with JWT and filter chains, you'll have the tools needed to enhance the security and reliability of your projects.\n\nWelcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "yDF3ZOp0uzQ",
+      "title": "Building RESTAPI and Database details in springboot | Chai aur Springboot",
+      "description": "Visit https://chaicode.com \nin Paid Collab with  @TechByAniOfficial \n\n0:01 Spring Boot Series Introduction\n2:09 Writing REST APIs in Spring Boot\n5:00 Understanding REST API Basics\n12:02 Setting Up Project Dependencies\n17:17 Creating In-Memory Data for Testing\n25:47 Testing REST API with Postman\n34:06 HTTP Status Codes in REST APIs\n39:56 Creating User with POST Mapping\n51:17 Updating User with PUT Mapping\n59:40 Deleting User with DELETE Mapping\n1:05:33 Java Persistence Evolution Overview\n1:17:57 Setting Up Spring Data JPA\n1:21:38 Running Postgres with Docker\n1:41:25 Creating Tables with Hibernate\n2:07:04 Building REST API for Data Operations\n2:30:45 Handling User Operations in Controller\n2:57:02 Order Management in Spring Boot\n3:28:07 Implementing Paging and Sorting\n\nLearn the intricate process of developing REST APIs using Spring Boot in this comprehensive tutorial. This video is part of the 'Tea and Spring Boot' series, where we delve deep into the core concepts and practical applications of REST API development. Whether you're a beginner or an experienced developer, this video provides valuable insights into creating robust APIs that can seamlessly communicate between client and server.\n\nThe journey begins with a foundational understanding of REST APIs, explaining their role as a contract for communication between software systems. The tutorial then transitions into building APIs using Spring Boot, emphasizing the importance of understanding the flow of RESTful services. You'll learn about various HTTP methods such as GET, POST, PUT, DELETE, and PATCH, and how they interact with resources like users and orders. The video also covers the nuances of handling data without direct database connectivity, using in-memory data structures to simulate database operations.\n\nAs the tutorial progresses, you'll explore the setup of a Spring Boot project with IntelliJ, including setting up dependencies and creating packages for controllers, DTOs, and services. The practical segment demonstrates how to create endpoints, manage data using repositories, and implement business logic in service layers. Additionally, the video provides a detailed explanation of HTTP status codes and how to handle them in your API responses.\n\nBy the end of this tutorial, you'll have the knowledge and skills to build efficient REST APIs using Spring Boot, understand the importance of design patterns in API development, and be able to implement pagination, sorting, and data validation in your projects.\n\n\nWelcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "CvuNdXB_UQg",
+      "title": "Are you really ready for DSA",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "16X0rONMaWQ",
+      "title": "Foundation of Spring Boot | Chai aur Springboot",
+      "description": "For more visit: https://chaicode.com\n\nin Paid Collab with @TechByAniOfficial \n\n0:08 Welcome to Chai or Code\n3:06 Introduction to Spring Boot\n4:47 Why Spring Boot?\n13:40 Spring Boot Configuration\n17:07 Prerequisites for Spring Boot\n18:21 Using IntelliJ IDEA for Development\n21:48 Project Setup and Metadata\n25:58 Starting with Spring Web\n29:54 Understanding Project Structure\n38:22 Building a Basic User Service\n51:07 Introduction to Spring Core\n1:09:55 Spring Profiles and Configuration\n1:17:09 Bean Scopes and Lifecycle\n1:25:55 Spring Boot Application Lifecycle\n1:44:33 Writing REST APIs in Spring Boot\n\nEmbark on a journey to master Spring Boot and revolutionize your Java backend development. This comprehensive series, 'Chai or Spring Boot,' is designed to take you from the basics of Spring and Spring Boot to creating robust, production-ready applications. With only four videos, this series promises to deliver a deep understanding of the Spring Boot framework and its applications.\n\nStarting with the fundamentals, you'll explore the differences between Spring and Spring Boot, understanding why Spring Boot was introduced as an enhancement to the Spring framework. The series delves into key concepts such as dependency injection, event-driven architecture, and microservices. You'll get hands-on with tools like Kafka, Redis, and Spring Security, ensuring you have a rounded knowledge of building secure and scalable Java backends.\n\nThe tutorial takes you through the setup process, including using IntelliJ IDEA for development, and covers the intricacies of Spring Boot's auto-configuration and dependency management. You'll learn how to efficiently manage dependencies using Maven and Gradle, and explore the powerful features of Spring Boot's Actuator for monitoring and managing your applications.\n\nBy the end of this series, you will be equipped to build and manage complex Java backend systems with confidence, leveraging the full potential of Spring Boot to streamline your development process. Whether you're aiming to create microservices or integrate with cloud technologies, this series provides the essential skills and knowledge to succeed.\n\n\nWelcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "VCqiwPs8ISE",
+      "title": "Chai aur Books pe Live stream Announcement",
+      "description": "Buy book from here:\nhttps://amzn.to/4p5zuFP\n\nTo get annoucement, join:\nhttps://hitesh.ai/whatsapp\n\nTo join Masterji, visit https://masterji.co \n\nWelcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "8EXIwlEVtJM",
+      "title": "Just chill live stream",
+      "description": "https://chaicode.com/cohorts/gen-ai",
+      "transcript": ""
+    },
+    {
+      "videoId": "PoPJNeOKrEk",
+      "title": "AI revolution is here",
+      "description": "Get your machine here\nhttps://www.hostg.xyz/SHJYZ\n\nand coupon codes are\nCHAIAURCODE - 10% off on 12 month plans\nCHAIAURCODE15 - 15% off on 24 months and above plans",
+      "transcript": ""
+    },
+    {
+      "videoId": "hYIb2xs0vvk",
+      "title": "Agent first testing for production applicaiton",
+      "description": "Stop guessing. Other verification tools read code and guess; TestSprite opens your app and uses it. Start using the #1 agentic testing platform to catch severe bugs. \nhttps://www.testsprite.com\n\nDiscord community: https://discord.com/invite/GXWFjCe4an\n\nWelcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "VmzMABFsiUM",
+      "title": "Chaicode is live",
+      "description": "to check our cohort, https://chaicode.com",
+      "transcript": ""
+    },
+    {
+      "videoId": "VBFeCWdv4hM",
+      "title": "Demo Day - Chaicode web dev",
+      "description": "check out our new GenAI cohort at https://chaicode.com/cohorts/gen-ai",
+      "transcript": ""
+    },
+    {
+      "videoId": "dbDwa-cJ1kI",
+      "title": "Chai aur live stream part 2",
+      "description": "https://chaicode.com/cohorts/gen-ai",
+      "transcript": ""
+    },
+    {
+      "videoId": "GZRWVbTE1B8",
+      "title": "Chai aur live",
+      "description": "GenAI cohort is here:\nhttps://chaicode.com/cohorts/gen-ai",
+      "transcript": ""
+    },
+    {
+      "videoId": "3OGrCtdnSFA",
+      "title": "Common Table Expression CTE in SQL master class",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\nRef video: https://youtu.be/6-Dsfgui0sE?si=fcdX5OEXIPLtnfEv\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "1YzNl1tkAik",
+      "title": "Final boss of self hosting",
+      "description": "get your own VPS here: https://www.hostg.xyz/SHJYZ\nand coupon codes are\nCHAIAURCODE - 10% off on 12 month plans\nCHAIAURCODE15 - 15% off on 24 months and above plans\n\n\nWelcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "Wh9yXS9sgio",
+      "title": "Window function in SQL Master class",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\nRef Video: https://youtu.be/6-Dsfgui0sE?si=fcdX5OEXIPLtnfEv\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "02ctXgIHMb0",
+      "title": "Your backend solution for next Hackathon | Strapi",
+      "description": "Hackathons are tricky and you have limited time to build products in hackathons, Use that time smartly. Use smart solutions that can save time and are reliable like Open Source product Strapi as Headless CMS.\n\nWelcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "GmK_yV9_ccY",
+      "title": "From One Connection to One Million  WebSockets Explained with code",
+      "description": "In this video, we will learn about Web Sockets in depth and we will focus on scaling websockets from few connections to millions of connections. Also,\nhttps://chaicode.com pe GenAI ka new cohort aaya h, check kr lo.\n\nWelcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "k90hf_6GjVo",
+      "title": "Intelligence ko popular kro bhai",
+      "description": "",
+      "transcript": ""
+    },
+    {
+      "videoId": "9KHUb3tfKjQ",
+      "title": "RAM hi sabse important h, aur kuch nhi",
+      "description": "",
+      "transcript": ""
+    },
+    {
+      "videoId": "TXYnIFXDda8",
+      "title": "Right audience will automatically reach to you",
+      "description": "",
+      "transcript": ""
+    },
+    {
+      "videoId": "6-Dsfgui0sE",
+      "title": "SQL subquery master class",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "nGareZEhdpI",
+      "title": "Build your own openclaw | Complete AI project",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "EJY-XJN3HtM",
+      "title": "React lab is in Version 2 with Mock interviews and is FREE",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nhttps://react.chaicode.com \n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "OQDtZGXLuQ0",
+      "title": "MCP 2.0 is here",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "oO99bM4YzXw",
+      "title": "Crazy AI use case",
+      "description": "",
+      "transcript": ""
+    },
+    {
+      "videoId": "Ja_LqbOdPyM",
+      "title": "Job n independence",
+      "description": "",
+      "transcript": ""
+    },
+    {
+      "videoId": "uTMS1T0a30o",
+      "title": "disregard breaks the googel search",
+      "description": "disregard breaks the googel search",
+      "transcript": ""
+    },
+    {
+      "videoId": "NbWzawMhG6Q",
+      "title": "Chai aur tech stream",
+      "description": "https://chaicode.com (Our new GenAI cohort is out BTW)",
+      "transcript": ""
+    },
+    {
+      "videoId": "qdwZbqfA6fU",
+      "title": "Google names are so confusing",
+      "description": "",
+      "transcript": ""
+    },
+    {
+      "videoId": "NGxXgIlA5x8",
+      "title": "DSA krna h kya ab ?",
+      "description": "",
+      "transcript": ""
+    },
+    {
+      "videoId": "780Fyv-SAUk",
+      "title": "Monorepo setup guide   How Big Companies Share Code Across Projects",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "RTJMwBObHPE",
+      "title": "09 Live leaderboard with Redis as assignment",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "0Y6PbN4NEz0",
+      "title": "08 Build a pub sub with Redis",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "UHpUq-Mvvkc",
+      "title": "07 Your guide to BullMQ   Queue infrastructure",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "r005ciJ55DY",
+      "title": "06 Email queue with redis lists",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "MFnK1PRABDU",
+      "title": "05 User profile in Redis   JSON vs HASH",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    },
+    {
+      "videoId": "MlxmA5_cc_Y",
+      "title": "04 Building a OTP verification with Redis",
+      "description": "Welcome to chai aur code, a coding/programming dedicated channel in Hindi language. Now you can learn best of programming concepts with industry standard practical guide in Hindi language.\n\nAll source code is available at my Github account:\nhttps://github.com/hiteshchoudhary\n\nOur Open-Source Project is here: https://freeapi.app\n\nJoin me at whatsapp: https://hitesh.ai/whatsapp\n\nfor community discord: https://hitesh.ai/discord\n\nInstagram pe yaha paaye jaate h:\nhttps://www.instagram.com/hiteshchoudharyofficial/\n\nHTML video series:  https://www.youtube.com/watch?v=XmLOwJHFHf0&list=PLu71SKxNbfoDBNF5s-WH6aLbthSEIMhMI\n\nComplete javascript series: https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37\n\nComplete Reactjs series: https://www.youtube.com/watch?v=vz1RlUyrc3w&list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige\n\nJavascript and react interview series: https://www.youtube.com/watch?v=1wqCyz7XrV4&list=PLu71SKxNbfoCy_MsA98SBfvUKF5eQit6L\n\nBackend development with Javascript: https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW\n\nPython Series: https://www.youtube.com/watch?v=Ca5DLSDfPec&list=PLu71SKxNbfoBsMugTFALhdLlZ5VOqCg2s",
+      "transcript": ""
+    }
+  ],
+  "qaPairs": [
+    {
+      "videoId": "mSeGdryJdcc",
+      "question": "Sir live stream ke start mein confusion hua kyuki thumbnail mein DDIA nahi Distributed System dikha😅. Isliye sorry",
+      "answer": "Vo thumbnail me gadbad h, fix krte h use"
+    },
+    {
+      "videoId": "mSeGdryJdcc",
+      "question": "Sir, I want to write blog based on this content on medium, along with your yt video link. May I please",
+      "answer": "Bilkul, zaroor likhiye! 😊"
+    },
+    {
+      "videoId": "mSeGdryJdcc",
+      "question": "thumbnail me wrong book hai",
+      "answer": "Yess, need to fix that"
+    },
+    {
+      "videoId": "yDF3ZOp0uzQ",
+      "question": "Nice course for java development 🎉😊",
+      "answer": "Glad you liked it, keep practicing! 😊"
+    },
+    {
+      "videoId": "yDF3ZOp0uzQ",
+      "question": "Is their any javascript or datascience liv classes about to start",
+      "answer": "No such plan as of now"
+    },
+    {
+      "videoId": "CvuNdXB_UQg",
+      "question": "That's really a helpful video. All my doubts for DSA are clear now. 🙂",
+      "answer": "Glad it helped, keep practicing! 🚀"
+    },
+    {
+      "videoId": "CvuNdXB_UQg",
+      "question": "faster language like c++ help in contest and interview?",
+      "answer": "Concept के topic पर language की speed की बात कर रहे हैं हम लोग। 😂"
+    },
+    {
+      "videoId": "CvuNdXB_UQg",
+      "question": "That extra lights giving me feeling of ai generated content.",
+      "answer": "Mai AI hi hu bhai"
+    },
+    {
+      "videoId": "CvuNdXB_UQg",
+      "question": "Chamak rahe ho sir ❤",
+      "answer": "Bas AI ka glow hai! 😄"
+    },
+    {
+      "videoId": "CvuNdXB_UQg",
+      "question": "Vote for DSA in python 👍👍",
+      "answer": "Video dekh ke b nhi aaya na kuch smjh?"
+    },
+    {
+      "videoId": "CvuNdXB_UQg",
+      "question": "Dare to do in assembly",
+      "answer": "I have written enough of assemblyin life. Don't want to write it again."
+    },
+    {
+      "videoId": "CvuNdXB_UQg",
+      "question": "Sir mai mood ke hisab se krta hu 🤭 \nJaisa mood vaisa language 😅",
+      "answer": "ये भी ठीक है, जी"
+    },
+    {
+      "videoId": "CvuNdXB_UQg",
+      "question": "Please Help me 🙏🙏\nDoubt: i have done 140 leetcode questions so far without flow any sheet (learn topics and concept and done questions). Am i doing something wrong and any advise for me.",
+      "answer": "Depends, sabhi topic cover hue ya nhi"
+    },
+    {
+      "videoId": "CvuNdXB_UQg",
+      "question": "The only thing which i found wrong was 100-150 question me 90-95% interviews crack krloge thats not possible until unless you are extraordinary for cracking a good dsa round you need practice and for that you have to solve more questions ! 300-400 questions are bare minimum for developing a good thinking mindset otherwise you will get blank on a new question!",
+      "answer": "Aise to fir 2000-3000 questions kro, kon rok rha 😌\n\nConcept to itni hi h, ab practice ya ego ke liye jitne mn ho kro"
+    },
+    {
+      "videoId": "16X0rONMaWQ",
+      "question": "I was looking for spring boot course and there you launched it. Thank you 😄",
+      "answer": "Glad you liked the timing, happy learning! 🚀"
+    },
+    {
+      "videoId": "16X0rONMaWQ",
+      "question": "Great initiative by our chai aur code ......... Thank you sir",
+      "answer": "Dhanyavaad ji, keep learning! 😊"
+    },
+    {
+      "videoId": "16X0rONMaWQ",
+      "question": "Awesome series ❤",
+      "answer": "Dhanyavaad ji, keep learning! 😊"
+    },
+    {
+      "videoId": "VCqiwPs8ISE",
+      "question": "Pushing the algo for more such vids.\nThanks a lot for this content !!!",
+      "answer": "bs yahi h asli support"
+    },
+    {
+      "videoId": "VCqiwPs8ISE",
+      "question": "Read this book last year. Will watch this series again tho :)) Nice initiative btw sir.",
+      "answer": "Dhanyavaad ji, happy learning! 😊"
+    },
+    {
+      "videoId": "VCqiwPs8ISE",
+      "question": "Interesting, If teacher is so good even if you don't read much books you get interest in reading books . Excited for next livestream on this 🔥",
+      "answer": "Dhanyavaad ji, milte hai phir livestream mein! 🔥"
+    },
+    {
+      "videoId": "VCqiwPs8ISE",
+      "question": "Sir right now  I'm watching Ben's 2nd live stream on the book System Performance by Brendon Gregg.\n\nThis is a good initiative sir and getting this in hindi will be gem for sure.\nThank you sir.\n\nRight now I'm personally reading the book Hands on LLM Serving and Optimization.",
+      "answer": "That's a great book, keep learning! 🚀"
+    },
+    {
+      "videoId": "VCqiwPs8ISE",
+      "question": "great sir  first time live stream to learn thing youtuber teach from bookreading awsome but does n't discountinue the series atleast complete 1 book",
+      "answer": "Bilkul, koshish karenge ki series poori ho! 👍"
+    },
+    {
+      "videoId": "VCqiwPs8ISE",
+      "question": "Sir just small request if you can please do live at night it would be nice really looking forward to see your experiences",
+      "answer": "Thanks for the suggestion, will see what works best for everyone. 😊"
+    },
+    {
+      "videoId": "VCqiwPs8ISE",
+      "question": "Sir o aap kuchh BMW ke bare me bole rahe.... the...🤭",
+      "answer": "pura twitter bol rha"
+    },
+    {
+      "videoId": "8EXIwlEVtJM",
+      "question": "Sir multi-tenant pe ek video bano dete tu  confusion clear ho jata",
+      "answer": "Bilkul, koshish krte h ispe jaldi ek video banane ki."
+    },
+    {
+      "videoId": "8EXIwlEVtJM",
+      "question": "Sir,mujhe apna leetcode banana h!!! Aap open source kar do",
+      "answer": "Scratch se banao bhai, zyada maza aayega seekhne me."
+    },
+    {
+      "videoId": "8EXIwlEVtJM",
+      "question": "Vote for multi - tent video",
+      "answer": "Will try to cover this soon."
+    },
+    {
+      "videoId": "8EXIwlEVtJM",
+      "question": "Sir pandas pr bhe video bano",
+      "answer": "List me add kr liya h ji."
+    },
+    {
+      "videoId": "8EXIwlEVtJM",
+      "question": "Comment to say hi to agent",
+      "answer": "Agent says hi!"
+    },
+    {
+      "videoId": "k90hf_6GjVo",
+      "question": "Sir maja aa jayega agar .in domain popular ho jaye to. Mere pass currently 3 domain hai 😅",
+      "answer": "Sahi hai, invest karke rakho kaam aayenge! 😅"
+    },
+    {
+      "videoId": "nGareZEhdpI",
+      "question": "Aaj toh Notification aaya🎉",
+      "answer": "Dhanyavaad ji, hope you enjoy the video!"
+    },
+    {
+      "videoId": "nGareZEhdpI",
+      "question": "sir can u make video on open source contribuition",
+      "answer": "Rhne hi dete h is topic ko🫣"
+    },
+    {
+      "videoId": "EJY-XJN3HtM",
+      "question": "This will definitely help me before mock interview \nThanks you sir❤",
+      "answer": "Best of luck with your preparation!"
+    },
+    {
+      "videoId": "EJY-XJN3HtM",
+      "question": "Good evening sir, Cohort student here !\nI have a suggestion can we get a custom bug as a feature",
+      "answer": "adding custom bug means adding database and then it cannot be free"
+    },
+    {
+      "videoId": "OQDtZGXLuQ0",
+      "question": "Bro, honestly, you are the best Hindi coding channel on YouTube right now — no exaggeration.\r\n\r\nI am genuinely obsessed with your content. The way you teach core, industry-grade topics in Hindi is something nobody else is doing at this level. Every video feels like it was made by someone who actually cares about the learner.\r\n\r\nPlease keep going. Topics like OpenTelemetry, Traefik that you mentioned — we're waiting for those. You've built something really special here, don't stop.",
+      "answer": "Noted, will cover those topics soon."
+    },
+    {
+      "videoId": "UHpUq-Mvvkc",
+      "question": "Thanks sir, I have an interview coming up and this was exactly what I was looking for, simple and concise.",
+      "answer": "Best of luck for your interview!"
+    }
+  ]
+}

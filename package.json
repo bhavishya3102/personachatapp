@@ -1,0 +1,28 @@
+{
+  "name": "hitesh-persona-chat",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Chat app that replies in Hitesh Choudhary's persona (tone + style), grounded in scraped YouTube/website data. No RAG, no embeddings — simple scraping + static persona context + Gemini (OpenAI-compatible API).",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "node server/index.js",
+    "start": "node server/index.js",
+    "scrape:yt": "node scraper/youtube.js",
+    "scrape:live": "node scraper/live-tone.js",
+    "scrape:web": "node scraper/website.js",
+    "build:persona": "node process/build-persona.js",
+    "web:install": "npm --prefix web install",
+    "web": "npm --prefix web run dev"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "openai": "^6.45.0",
+    "youtube-transcript": "^1.3.1"
+  }
+}
