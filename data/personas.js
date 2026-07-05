@@ -7,7 +7,7 @@
 // `youtube.handle`  -> scraper/youtube.js  + scraper/live-tone.js
 // `website`         -> scraper/website.js
 // `liveVideoId`     -> scraper/live-tone.js default (pick a shortish live stream)
-// `avatar`          -> a file in data/assets/, served by the server at /avatars/<file>
+// `avatar`          -> a file in web/public/avatars/, served statically at /avatars/<file>
 //                      (the UI shows the photo; `emoji` is the text fallback)
 
 import { PERSONA as HITESH } from "./hitesh/persona.js";

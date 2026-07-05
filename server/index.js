@@ -15,16 +15,11 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import OpenAI from "openai";
 import { PERSONAS, getPersona, DEFAULT_PERSONA } from "../data/personas.js";
+import { SYSTEM_PROMPTS } from "../lib/prompts.js"; // one system prompt per persona (shared with api/*)
 
 dotenv.config({ quiet: true });
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DATA_DIR = path.join(__dirname, "..", "data");
 
 const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash"; // gemini-2.5-pro for best fidelity
 const BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/";
@@ -33,46 +28,14 @@ const MAX_TOKENS = 2048;
 const PORT = process.env.PORT || 8787;
 const MOCK = process.env.MOCK === "1" || !API_KEY;
 
-// ---------- build the persona system prompt once at startup ----------
-function readIfExists(p, fallback = "") {
-  try { return fs.readFileSync(p, "utf8"); } catch { return fallback; }
-}
-
-function loadExamplePairs(dir) {
-  try {
-    const raw = JSON.parse(readIfExists(path.join(dir, "examples.json"), "{}"));
-    return Array.isArray(raw.pairs) ? raw.pairs : [];
-  } catch { return []; }
-}
-
-function buildSystemPrompt(cfg) {
-  const dir = path.join(DATA_DIR, cfg.dir);
-  const knowledge = readIfExists(path.join(dir, "knowledge.md")).trim();
-  const liveStyle = readIfExists(path.join(dir, "live-style.md")).trim(); // distilled live tone (npm run scrape:live)
-  const examples = loadExamplePairs(dir).slice(0, 20); // few-shot set (raise for more of his voice; costs a few tokens)
-  const examplesText = examples
-    .map((p, i) => `Example ${i + 1}\nComment: ${p.question}\n${cfg.name}: ${p.answer}`)
-    .join("\n\n");
-
-  return [
-    cfg.persona.trim(),
-    knowledge ? `# What you teach / your world (reference)\n${knowledge}` : "",
-    liveStyle,
-    examplesText ? `# Real examples of how you reply (match this voice)\n${examplesText}` : "",
-  ].filter(Boolean).join("\n\n");
-}
-
-// one prompt per persona, built once at startup
-const SYSTEM_PROMPTS = Object.fromEntries(
-  Object.values(PERSONAS).map((cfg) => [cfg.id, buildSystemPrompt(cfg)])
-);
 const client = MOCK ? null : new OpenAI({ apiKey: API_KEY, baseURL: BASE_URL });
 
 // ---------- server ----------
+// Note: avatars are served as static files by the frontend (web/public/avatars),
+// so both local dev (Vite) and production (Vercel) serve them without the backend.
 const app = express();
 app.use(cors());
 app.use(express.json({ limit: "1mb" }));
-app.use("/avatars", express.static(path.join(DATA_DIR, "assets"))); // persona photos
 
 app.get("/health", (_req, res) => {
   res.json({ ok: true, mock: MOCK, provider: "gemini (openai-compatible)", model: MODEL, hasKey: !!API_KEY });

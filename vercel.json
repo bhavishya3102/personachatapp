@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm --prefix web install && npm --prefix web run build",
+  "outputDirectory": "web/dist",
+  "functions": {
+    "api/**/*.js": { "includeFiles": "data/**" }
+  },
+  "rewrites": [
+    { "source": "/chat", "destination": "/api/chat" },
+    { "source": "/personas", "destination": "/api/personas" },
+    { "source": "/health", "destination": "/api/health" }
+  ]
+}

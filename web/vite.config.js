@@ -7,10 +7,10 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
+      // API calls -> local Express backend. (/avatars are static files in public/, no proxy.)
       "/chat": "http://localhost:8787",
       "/health": "http://localhost:8787",
       "/personas": "http://localhost:8787",
-      "/avatars": "http://localhost:8787",
     },
   },
 });
